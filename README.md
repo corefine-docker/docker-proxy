@@ -4,9 +4,9 @@
 
 基于swarm的使用
 
-docker run -d -p 4002:80 -e HOST=mysq_test -e PORT=3306 --network swarm-net fine/nginx-proxy
+docker run -d -p 4002:80 -e HOST=mysql -e PORT=3306 --network swarm-net fine/nginx-proxy
 
-1.HOST：mysq_test为要代理的容器，必须已经加入了swarm-net网络
+1.HOST：mysql为要代理的容器，必须已经加入了swarm-net网络
 
 2.PORT：3306目标端口号
 
