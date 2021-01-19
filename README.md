@@ -2,7 +2,7 @@
 
 基于nginx的代理程序，使用tcp进行代理。
 
-基于swarm的使用
+## 基于swarm的使用
 
 docker run -d -p 4002:80 -e HOST=mysql -e PORT=3306 --network swarm-net fine/nginx-proxy
 
@@ -12,6 +12,10 @@ docker run -d -p 4002:80 -e HOST=mysql -e PORT=3306 --network swarm-net fine/ngi
 
 3.4002为暴露的端口号
 
-基于link的使用
+## 基于link的使用
 
 docker run -d -p 4002:80 -e HOST=es -e PORT=3306 --link es:elasticsearch swarm-net fine/nginx-proxy
+
+## 将https解为http
+
+docker run -d -p 4002:80 -e ENABLE_SSL=true -e HOST=mysql -e PORT=3306 --network swarm-net fine/nginx-proxy
